@@ -35,6 +35,29 @@ void upperCase(char ch[],int size){
      // cout<<ch<<endl;
 }
 
+void replaceSpaceWith(char ch[],int size){
+     int i = 0;
+     while(ch[i] != '\0'){
+          if(int(ch[i]) == 32){
+               ch[i] = '@';
+          }
+          i++;
+     }
+}
+
+bool palindrome(char ch[], int size){
+     int s = 0, e = size-1;
+     while(s<=e){
+          if(ch[s] == ch[e]){
+               s++,e--;
+          }else{
+               return false;
+          }
+     }
+     return true;
+}
+
+
 
 
 int main(){
@@ -69,11 +92,94 @@ int main(){
      // cin.getline(ok,100);
      // reverseString(ok,100);
 
+     // char ok[100];
+     // cin.getline(ok,100);
+     // int n = findLength(ok,100);
+
      //// Upper Case
-     char ok[100];
-     cin.getline(ok,100);
-     upperCase(ok,100);  
-     cout<<ok<<endl;   
+     // upperCase(ok,n);  
+     //// Replace space with @
+     // replaceSpaceWith(ok,n);
+     //// Check Palindrome
+     // bool ans = palindrome(ok,n);
+     // if(ans){
+     //      cout<<"Yes it is a palindrome"<<endl;
+     // }else{
+     //      cout<<"No it is not a palindrome"<<endl;
+     // }
+
+
+
+
+     ////////////////////   Strings   //////////////////
+
+     // string name;  --> initialization
+     // same for input as char ch[]
+     /*
+          When u Enter "omkar awhad" as ip , then it gives only "omkar" as a op
+          Because the delimetor for cin is 
+          1. new line \n
+          2. space ' '
+          3. tab \t
+
+          So we can use "getline(cin, name of the variable)" to get whole line as input
+     */
+     // strings too have null character at end
+     // same for output
+
+     // string name;
+     // // cin.getline(name,100);
+     // getline(cin, name);
+     // cout<<name<<endl;
+
+
+
+     ///// String operations
+     string name;
+     getline(cin,name);
+     cout<<" Length of String : "<<name.length()<<endl;
+     cout<<" String is empty or not : "<<name.empty()<<endl;
+     cout<<" Character at specific(1st) index : "<<name.at(1) <<endl;
+     cout<<" First character : "<<name.front()<<endl;
+     cout<<" Back character : "<<name.back() <<endl;
+     // cout<<"  : "<< <<endl;
+     // cout<<"  : "<< <<endl;
+
+     string str1 = "omkar ";
+     string str2 = "awhad";
+     cout<<str1.append(str2)<<endl;
+
+     string temp = "This is a demo line";
+     cout<<temp.erase(4,3)<<endl; /// erases 3 char from the 4th index (4,5,6)
+
+     string tp = "omkar awhad";
+     string middle = "sandeep ";
+     cout<<tp.insert(6,middle)<<endl; /// Inserts middle string at 6th index
+
+
+     string ok = "nothing";
+     ok.push_back('Z');
+     cout<<ok<<endl;
+     ok.pop_back();
+     cout<<ok<<endl;
+
+
+     string s1 = "Nothing but chicken";
+     string s2 = "but2";
+     cout<<s1.find(s2)<<endl; /// if found then it gives the starting index for the substring in the main string ,,, and if not then it returns a npos(random number)
+     // simply use if else, if s1.find(s2)==string::npos then return not found, else found
+
+
+     cout<<s1.compare(s2)<<endl; /// if matched then it returns 0 and if not matched then it returns -1
+
+     /// to get a substring from a existing string
+     string st1 = "This is a timepass line written by me for timepass only";
+     string st2 = st1.substr(5,15);
+     cout<<st2<<endl;
+
+
+
+
 
 
      return 0;
