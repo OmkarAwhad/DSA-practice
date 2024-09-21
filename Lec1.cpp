@@ -165,7 +165,7 @@ int main(){
 
 
      string s1 = "Nothing but chicken";
-     string s2 = "but2";
+     string s2 = "but";
      cout<<s1.find(s2)<<endl; /// if found then it gives the starting index for the substring in the main string ,,, and if not then it returns a npos(random number)
      // simply use if else, if s1.find(s2)==string::npos then return not found, else found
 
@@ -174,7 +174,7 @@ int main(){
 
      /// to get a substring from a existing string
      string st1 = "This is a timepass line written by me for timepass only";
-     string st2 = st1.substr(5,15);
+     string st2 = st1.substr(5,15 );
      cout<<st2<<endl;
 
 

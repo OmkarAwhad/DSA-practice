@@ -1,13 +1,1 @@
- Length of String : 11
- String is empty or not : 0
- Character at specific(1st) index : m
- First character : O
- Back character : d
-omkar awhad
-This a demo line
-omkar sandeep awhad
-nothingZ
-nothing
-4294967295
--1
-is a timepass l
+ab
