@@ -177,6 +177,10 @@ int main(){
      string st2 = st1.substr(5,15 );
      cout<<st2<<endl;
 
+     string omkar = "omkar";
+     string awhad = omkar;
+     cout<<awhad<<endl;
+
 
 
 
