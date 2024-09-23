@@ -160,23 +160,34 @@ using namespace std;
      Input: timePoints = ["00:00","23:59","00:00"]
      Output: 0
 */
-
-int findMinDifference(vector<string>& timePoints) {
-     int n = timePoints.size();
-     vector<int> temp;
-     int hours = 0, minutes = 0;
-     for(auto val:timePoints){
-          hours = stoi(val.substr(0,2));
-          minutes = stoi(val.substr(3,2));
-          temp.push_back(hours*60 + minutes);
+/*
+     class Solution {
+     public:
+     int findMinDifference(vector<string>& timePoints) {
+          int n = timePoints.size();
+          vector<int> temp;
+          int hours = 0, minutes = 0;
+          for(auto val:timePoints){
+               hours = stoi(val.substr(0,2));
+               minutes = stoi(val.substr(3,2));
+               temp.push_back(hours*60 + minutes);
+          }
+          sort(temp.begin(), temp.end());
+          
+          int minElm = INT_MAX;
+          int diff = 0;
+          for(int i=0;i<temp.size()-1;i++){
+               diff = temp[i+1]-temp[i];
+               //  cout<<diff<<endl;
+               minElm = min(minElm, diff);
+          }
+          diff = temp[0]+(24*60)-temp[temp.size()-1];
+          minElm = min(minElm, diff);
+          
+          return minElm;
      }
-     sort(temp.begin(), temp.end());
-     for(auto val:temp){
-          cout<<val<<" ";
-     }
-     cout<<endl;
-     return temp[1]-temp[0];
-}
+     };
+*/
 
 
 
