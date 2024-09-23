@@ -171,11 +171,18 @@ int findMinDifference(vector<string>& timePoints) {
           temp.push_back(hours*60 + minutes);
      }
      sort(temp.begin(), temp.end());
-     for(auto val:temp){
-          cout<<val<<" ";
+     
+     int minElm = INT_MAX;
+     int diff = 0;
+     for(int i=0;i<temp.size()-1;i++){
+         diff = temp[i+1]-temp[i];
+        //  cout<<diff<<endl;
+         minElm = min(minElm, diff);
      }
-     cout<<endl;
-     return temp[1]-temp[0];
+     diff = temp[0]+(24*60)-temp[temp.size()-1];
+     minElm = min(minElm, diff);
+     
+     return minElm;
 }
 
 
