@@ -193,6 +193,50 @@ int garbageCollection(vector<string>& garbage, vector<int>& travel) {
      "ccc" does not match the pattern because {a -> c, b -> c, ...} is not a permutation, since a and b map to the same letter.
 */
 
+
+
+
+/////////////  Leetcode 49 (Group anagams)
+/*
+     class Solution {
+     public:
+     std::array<int,256> anagram(string s){
+          std::array<int,256> mapp = {0};
+          for(auto ch:s){
+               mapp[ch]++;
+          }
+          return mapp;
+     }
+
+     vector<vector<string>> groupAnagrams(vector<string>& strs) {
+          map<std::array<int,256>, vector<string> > mp;
+          for(auto s:strs){
+               mp[anagram(s)].push_back(s);
+          }
+
+          vector< vector<string> > ans;
+          for(auto it=mp.begin() ; it!=mp.end() ; it++){
+               ans.push_back(it->second);
+          }
+          return ans;
+
+
+          ////////////   High complexity
+          // map<string, vector<string> > mp;
+          // for(auto str:strs){
+          //     string s = str;
+          //     sort(s.begin(),s.end());
+          //     mp[s].push_back(str);
+          // }
+          // vector< vector<string> > ans;
+          // for(auto it=mp.begin() ; it!=mp.end() ; it++){
+          //     ans.push_back(it->second);
+          // }
+          // return ans;
+     }
+     };
+*/
+
 int main(){
      // vector<string> garbage = {"MMM","PGM","GP"};
      // vector<int> travel = {3,10};
